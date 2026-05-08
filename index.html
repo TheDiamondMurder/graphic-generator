@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Graphic Generator</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="generator-page" aria-labelledby="page-title">
+      <section class="intro">
+        <div class="brand" aria-label="Graphic Generator">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span>generator.jakublabs.xyz</span>
+        </div>
+
+        <h1 id="page-title">Graphic Generator</h1>
+        <p class="lede">make clean posters, announcements, covers, and chaos graphics</p>
+      </section>
+
+      <section class="tool" aria-label="Graphic generator">
+        <form class="graphic-form" id="graphic-form">
+          <label>
+            <span>template</span>
+            <select id="template">
+              <option value="event">Event Graphic</option>
+              <option value="f1">F1 Breaking News</option>
+              <option value="matchday">Matchday Poster</option>
+              <option value="announcement">Big Announcement</option>
+              <option value="cover">Playlist / Cover Art</option>
+            </select>
+          </label>
+
+          <label>
+            <span>main title</span>
+            <input id="title" type="text" value="Jakub Labs Live" required />
+          </label>
+
+          <label>
+            <span>subtitle / headline</span>
+            <textarea id="subtitle" rows="3">one night only</textarea>
+          </label>
+
+          <label>
+            <span>image</span>
+            <input id="image" type="file" accept="image/*" />
+          </label>
+
+          <div class="field-row">
+            <label>
+              <span>location / tag</span>
+              <input id="detail-one" type="text" value="Leicester" />
+            </label>
+            <label>
+              <span>date</span>
+              <input id="detail-two" type="text" value="28 Nov 2026" />
+            </label>
+          </div>
+
+          <div class="field-row">
+            <label>
+              <span>time / extra</span>
+              <input id="detail-three" type="text" value="20:00" />
+            </label>
+            <label>
+              <span>accent</span>
+              <input id="accent" type="color" value="#e9ff70" />
+            </label>
+          </div>
+
+          <div class="actions">
+            <button class="button button-light" type="submit">Generate</button>
+            <a class="button button-dark" id="download" href="#" download="jakublabs-graphic.png">
+              Download
+            </a>
+          </div>
+        </form>
+
+        <div class="preview-shell">
+          <canvas
+            id="graphic-canvas"
+            width="1200"
+            height="1200"
+            aria-label="Generated graphic"
+          ></canvas>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
